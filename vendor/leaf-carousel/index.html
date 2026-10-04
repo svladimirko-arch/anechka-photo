@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf Carousel — демо</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: radial-gradient(120% 90% at 50% 0%, #241a13, #100b08 70%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    /* потребитель задаёт размер блока-обёртки — виджет подстраивается */
+    .demo-wrap { width: min(96vw, calc(94vh * 1.7765), 1720px); }
+  </style>
+</head>
+<body>
+
+  <div class="demo-wrap">
+    <!-- сам блок -->
+    <div id="portfolio"></div>
+  </div>
+
+  <!-- виджет -->
+  <script src="leaf-carousel.js"></script>
+  <script>
+    LeafCarousel.mount('#portfolio', {
+      bg: 'assets/bg-window.png',
+      slides: [
+        { leaf: 'assets/leaves/leaf-01.png', photo: 'assets/leaves/leaf-01(1).jpg', title: 'Кейс 1',  url: '#' },
+        { leaf: 'assets/leaves/leaf-02.png', photo: 'assets/leaves/leaf-02(1).jpg', title: 'Кейс 2',  url: '#' },
+        { leaf: 'assets/leaves/leaf-03.png', photo: 'assets/leaves/leaf-03(1).jpg', title: 'Кейс 3',  url: '#' },
+        { leaf: 'assets/leaves/leaf-04.png', photo: 'assets/leaves/leaf-04(1).jpg', title: 'Кейс 4',  url: '#' },
+        { leaf: 'assets/leaves/leaf-05.png', photo: 'assets/leaves/leaf-05(1).jpg', title: 'Кейс 5',  url: '#' },
+        { leaf: 'assets/leaves/leaf-06.png', photo: 'assets/leaves/leaf-06(1).jpg', title: 'Кейс 6',  url: '#' },
+        { leaf: 'assets/leaves/leaf-07.png', photo: 'assets/leaves/leaf-07(1).jpg', title: 'Кейс 7',  url: '#' },
+        { leaf: 'assets/leaves/leaf-08.png', photo: 'assets/leaves/leaf-08(1).jpg', title: 'Кейс 8',  url: '#' },
+        { leaf: 'assets/leaves/leaf-09.png', photo: 'assets/leaves/leaf-09(1).jpg', title: 'Кейс 9',  url: '#' },
+        { leaf: 'assets/leaves/leaf-10.png', photo: 'assets/leaves/leaf-10(1).jpg', title: 'Кейс 10', url: '#' },
+      ],
+    }).then(function (api) {
+      console.log('Leaf Carousel готов:', api);
+    });
+  </script>
+</body>
+</html>
